@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vánoční prodej kaprů</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      background: none;
+      cursor: none; /* skryjeme klasický kurzor */
+    }
+
+    /* VLASTNÍ KURZOR */
+    .custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      font-size: 28px;
+      line-height: 1;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.15s ease;
+      z-index: 9999;
+      filter: drop-shadow(0 0 2px rgba(0,0,0,0.6));
+    }
+
+    .custom-cursor.hover {
+      transform: translate(-50%, -50%) scale(1.4);
+    }
+
+    .custom-cursor.hover {
+      width: 36px;
+      height: 36px;
+    }
+
+    .overlay {
+      position: relative;
+      background: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      z-index: 1;
+    }
+
+    .topbar {
+      background: #9c1c14;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffffff;
+      color: #000000;
+      padding: 10px 20px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    .info {
+      margin: 20px 0;
+      font-size: 18px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: 0.4s;
+    }
+
+    .notice {
+      background: rgba(0,0,0,0.5);
+      padding: 10px;
+      margin: 30px 0;
+      font-size: 16px;
+    }
+
+    h2 {
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    .box {
+      background: rgba(255,255,255,0.12);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .hours {
+      margin: 50px 0;
+      font-size: 18px;
+    }
+
+    footer {
+      background: rgba(0,0,0,0.7);
+      padding: 30px 20px;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    footer div {
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 30px; }
+      h2 { font-size: 26px; }
+      .row { font-size: 15px; }
+    }
+      h2 { font-size: 26px; }
+      .row { font-size: 15px; }
+    }
+  
+    .parallax-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      background: url('background.jpg') center / cover no-repeat;
+      transform: translateZ(0);
+      will-change: transform;
+      z-index: 0;
+    }
+
+    @media (max-width: 768px) {
+      body { cursor: auto; }
+      .custom-cursor { display: none; }
+      .parallax-bg {
+        position: absolute;
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="parallax-bg"></div>
+  <div class="custom-cursor">🐟</div>
+  <div class="overlay">
+
+    <div class="topbar">🏠 Neratovická 193, Kostelec nad Labem, 277 13</div>
+
+    <div class="container">
+      <h1>KAŽDOROČNÍ PRODEJ<br>VÁNOČNÍCH KAPRŮ</h1>
+
+      <div class="badge">Z Rožmitálu pod Třemšínem</div>
+
+      <div class="info">📅 Od 17. 12. 2025, od 14 h</div>
+
+      <div class="notice">Platba pouze v hotovosti</div>
+
+      <h2>Ceník</h2>
+
+      <div class="box">
+        <div class="row"><span>Kapr I. jakost do 2,4 kg</span><span>125 Kč/kg</span></div>
+        <div class="row"><span>Kapr výběr od 2,4 kg</span><span>129 Kč/kg</span></div>
+        <div class="row"><span>Amur</span><span>130 Kč/kg</span></div>
+        <div class="row"><span>Štika</span><span>307 Kč/kg</span></div>
+        <div class="row"><span>Candát</span><span>420 Kč/kg</span></div>
+        <div class="row"><span>Lín</span><span>149 Kč/kg</span></div>
+      </div>
+
+      <div class="box">
+        <div class="row"><strong>Zabití ryb</strong><strong>ZDARMA</strong></div>
+        <div class="row"><span>Kuchání, škrábání</span><span>68 Kč/ks</span></div>
+        <div class="row"><span>Stahování</span><span>132 Kč/ks</span></div>
+        <div class="row"><span>Filety</span><span>160 Kč/ks</span></div>
+      </div>
+
+      <div class="hours">Otevírací doba od 18. 12. 8 h – 19 h</div>
+    </div>
+
+    <footer>
+      <div>
+        <div>
+          Provozovatel: Barbora Glaserová<br>
+          IČO: 10690131<br>
+          Tel.: 777 703 594<br>
+          Objednávky prosíme pouze SMS, obratem odpovíme.
+        </div>
+        <div>
+          Neratovická 193<br>
+          Kostelec nad Labem, 277 13<br>
+          8 h – 19 h
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script>
+    const cursor = document.querySelector('.custom-cursor');
+
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, button, .box').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+  </script>
+</body>
+</html>
